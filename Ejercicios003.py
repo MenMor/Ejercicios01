@@ -130,3 +130,6 @@ total_pago = subtotal + iva
 total_pago = round(total_pago, 2)
 
 print(f"IVA: {iva} Total a pagar: {total_pago}")
+
+
+print("Hola")
