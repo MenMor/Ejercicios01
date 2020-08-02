@@ -266,7 +266,7 @@ else:
 
 # Realizar un programa que calculé el dígito verificador de la cédula ecuatoriana.
 
-cedula = [1, 7, 1, 9, 0, 8, 8, 3, 6]
+cedula = [1, 7, 1, 4, 6, 3, 3, 3, 4]
 
 cedula[0] = cedula[0] * 2
 if cedula[0] > 9:

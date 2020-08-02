@@ -1,34 +1,6 @@
-"""Dada una medida de tiempo expresada en horas, minutos y segundos con valores aleatorios.
-    Elabore un programa que transforme dicha medida en una expresión correcta. """
-
-horas = int(input("Ingrese horas: "))
-minutos = int(input("Ingrese minutos: "))
-segundos = int(input("Ingrese segundos: "))
-dias = 0
-if segundos > 60:
-    minutos = minutos + (segundos // 60)
-    segundos = segundos % 60
-    print(segundos, " seg")
-else:
-    print(segundos, " seg")
-
-if minutos > 60:
-    horas = horas + (minutos // 60)
-    minutos = minutos % 60
-    print(minutos, " min")
-else:
-    print(minutos, " min")
-
-print(horas, " h")
-
-if horas > 24:
-    dias = horas // 24
-    print(dias, " dias")
-
-print(f"{dias} dias {horas} horas {minutos} min {segundos} segundos")
-
-
-# Con while
+print("Dada una medida de tiempo expresada en horas, minutos y segundos con valores aleatorios."
+      "\nElabore un programa que transforme dicha medida en una expresión correcta. "
+      "\nCon while")
 
 horas = int(input("Introduce horas:"))
 min = int(input(" Introduce minutos"))
@@ -51,18 +23,25 @@ while horas > 24:
 print(f"{dias} dias {horas} horas {min} min {segundos} segundos ")
 
 
-# Promedio de 3 notas
-n = int(input("Ingrese nota 1: "))
-n2 = int(input("Ingrese nota 2: "))
-n3 = int(input("Ingrese nota 3: "))
+
+
+print ("\nPromedio de 3 notas")
+n = float(input("Ingrese nota 1: "))
+n2 = float(input("Ingrese nota 2: "))
+n3 = float(input("Ingrese nota 3: "))
 promedio = (n+n2+n3) / 3
 print(promedio)
 
-# Area de un triangulo
+
+
+print("\nArea de un triangulo")
 altura = int(input("Ingrese altura: "))
 base = int(input("Ingrese base: "))
-area = (base * altura) /2
+area = (base * altura) / 2
 print("El area es: ", area)
+
+
+
 
 """cedula = [1,7,1,4,1,3,1,3,4]
 suma_impares = cedula[0]+cedula[2]+cedula[4]+cedula[6]+ cedula[8]
@@ -70,6 +49,8 @@ suma_pares = cedula[1]+cedula[3]+cedula[5]+cedula[7]
 # Acceder elementos de lista
 digitos_pares = cedula[1:8:2]
 digitos_impares = cedula[0:9:2]"""
+
+
 
 # Factorial
 numero = int(input("Ingrese valor para calcular su factorial: "))
@@ -79,21 +60,25 @@ for i in range(1, numero+1):
 print(total)
 
 
+
+
+
 # Realizar un programa que calculé el dígito verificador de la cédula ecuatoriana.
 
-print("Introduce 8 digitos de cédula")
+print("\nIntroduce 9 digitos de cédula")
 sumaPar = 0
 sumaImpar = 0
+producto = 0
 i = 1
 while i < 10:
      digitos = int(input("Introduce dígito: "))
      if i % 2 == 0:
           sumaPar += digitos
      else:
-          prod = digitos * 2
-     if prod > 9:
-          prod -= 9
-     sumaImpar += prod
+          producto = digitos * 2
+          if producto > 9:
+              producto -= 9
+          sumaImpar += producto
      i += 1
 
 sumaT = sumaPar + sumaImpar
@@ -103,6 +88,35 @@ if mod != 0:
      print(f"Dígito verificador es : {mod}")
 else:
      print("Dígito verificador es: 0 ")
+
+
+# Realizar un programa que calculé el dígito verificador de la cédula ecuatoriana. Con listas.
+
+cedula = []
+for i in range(0, 9):
+    digito_in = int(input(f"Ingrese {i+1} digito de cedula: "))
+    posicion = i
+    cedula.insert(posicion, digito_in)  # Inserto en la posicion i, el valor de entrada a lista
+print(cedula)
+
+suma_impares = 0
+for j in range(0, 9, 2):
+    cedula[j] = cedula[j] * 2
+    if cedula[j] > 9:
+        cedula[j] -= 9
+    suma_impares += cedula[j]
+
+suma_pares = cedula[1]+cedula[3]+cedula[5]+cedula[7]
+suma_total = suma_pares + suma_impares
+
+suma_total %= 10
+if suma_total != 0:
+    suma_total = 10 - suma_total
+    print(f"Dígito verificador es: {suma_total}")
+else:
+    print(f"Dígito verificandor es : {suma_total}")
+
+
 
 
 
@@ -132,4 +146,3 @@ total_pago = round(total_pago, 2)
 print(f"IVA: {iva} Total a pagar: {total_pago}")
 
 
-print("Hola")
