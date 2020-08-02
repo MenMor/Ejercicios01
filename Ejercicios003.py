@@ -64,7 +64,7 @@ base = int(input("Ingrese base: "))
 area = (base * altura) /2
 print("El area es: ", area)
 
-"""cedula = [1,7,1,4,1,3,1,3,4,9]
+"""cedula = [1,7,1,4,1,3,1,3,4]
 suma_impares = cedula[0]+cedula[2]+cedula[4]+cedula[6]+ cedula[8]
 suma_pares = cedula[1]+cedula[3]+cedula[5]+cedula[7]
 # Acceder elementos de lista

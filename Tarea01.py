@@ -4,22 +4,28 @@ import math
 print("Convertir de grados a radianes.")
 
 grados = int(input("Ingrese valor de grados a convertir: "))
-rad = grados * 3.1416 / 180
+rad = grados * math.pi / 180
 print("Grados", grados, " a ", rad, " rad")
+
+
+
+
+
+
 
 
 """ Realizar un algoritmo que pida al usuario la velocidad en m/s y el radio de la
     circunferencia de la pista, el resultado el programa devuelve el tiempo que tarda el
     atleta en dar dos vueltas a la pista, sabiendo que el atleta descansa 1min cada 1000m. """
 
-print("\n Calculo de tiempo que tarda un atlta en dar dos vueltas a la pista.")
+print("\n Cálculo de tiempo que tarda un atlta en dar dos vueltas a la pista.")
 
 velocidad = float(input("Introduce velocidad en m/s: "))
 radio = float(input("Introduce radio de pista: "))
 
 velocidad_angular = velocidad/radio  # velocidad angular para fórmula periodo de mcu.
-tiempo = (2*3.1416/velocidad_angular)*2
-longitud = 2*3.1416*radio
+tiempo = (2 * math.pi / velocidad_angular) * 2
+longitud = 2 * math.pi * radio
 
 if longitud > 2000:
     tiempo += 120
@@ -27,21 +33,25 @@ if longitud > 2000:
 print(f"Tiempo : {tiempo}")
 
 
-# Realizar un programa que calculé el dígito verificador de la cédula ecuatoriana.
+
+
+
+
+
 
 """ Elaborar un algoritmo que calculé el impuesto a la renta con relación de dependencia de un empleado,
     conociendo el sueldo mensual del funcionario, sus gastos deducibles del año (Salud, vivienda, alimentación, 
     educación y vestimenta) y el porcentaje de aportación al IESS. Debe basarse en la tabla de Impuesto a la Renta 
     del 2020 para si cálculo."""
 
-print("\n Calculo impuesto a la renta con relación de dependencia de un empleado.")
+print("\n Cálculo impuesto a la renta con relación de dependencia de un empleado.")
 
 sueldo = float(input("Introduce sueldo mensual de funcionario  "))
 gastos = float(input("Introduce total de gastos de Salud, vivienda, alimentación, educación y vestimenta  "))
 
 if gastos <= sueldo*0.4:
 
-    sueldo *= 12
+    sueldo *= 12  # 12 años
     aporte_iess = sueldo * 9.45
     aporte_iess = (round(aporte_iess, 2))  # limito a dos decimales
     sueldo = aporte_iess - sueldo - gastos
@@ -82,9 +92,14 @@ else:
 
 
 
+
+
+
+
+
 # Resolucion ecuacion cuadratica ax^2 + bx + c = 0 por formula general
 
-print("\nResolucion ecuacion cuadratica ax^2 + bx + c = 0 por formula general.")
+print("\nResolución ecuación cuadratica ax^2 + bx + c = 0 por formula general.")
 a = int(input("Valor de a: "))
 b = int(input("Valor de b: "))
 c = int(input("Valor de c: "))
@@ -92,14 +107,19 @@ c = int(input("Valor de c: "))
 discriminante = b ** 2 - 4 * a * c
 
 if discriminante < 0:
-    print("La ecuacion no tiene soluciones reales")
+    print("La ecuación no tiene soluciones reales")
 elif discriminante == 0:
     x = -b / 2*a
-    print(f"Solucion unica: {x}")
+    print(f"Solución unica: {x}")
 else:
     x1 = (-b - math.sqrt(discriminante)) / (2*a)
     x2 = (-b + math.sqrt(discriminante)) / (2*a)
     print(f"Dos soluciones reales: x1= {x1} x2= {x2}")
+
+
+
+
+
 
 
 
@@ -135,6 +155,12 @@ if horas > 24:
 print(f"{dias} dias {horas} horas {minutos} min {segundos} segundos")
 
 
+
+
+
+
+
+
 # Factura con descuento del 10% si su monto es mayor a $100
 
 print("\nFactura con descuento del 10% si su monto es mayor a $100.")
@@ -155,6 +181,11 @@ print(f"IVA: {iva} Total a pagar: {total_pago}")
 
 
 
+
+
+
+
+
 # Si el promedio es mayor a 7 el alumno esta aprobaado caso contario estara reprobado
 
 print("\nSi el promedio es mayor a 7 el alumno esta aprobaado caso contario estara reprobado.")
@@ -169,10 +200,17 @@ if suma_notas >= 7:
 else:
      print("Materia Reprobada")
 
-# algoritmo que simula una calculadora basica (menu para que usuario indique que operacion desea)
-print("\nCalculadora basica, elija su opcion.")
 
-opcion = int(input("1. Suma" "\n2. Resta" "\n3. Multiplicacion" "\n4. Division" "\n:  "))
+
+
+
+
+
+
+# algoritmo que simula una calculadora basica (menu para que usuario indique que operacion desea)
+print("\nCalculadora básica; elija su opción.")
+
+opcion = int(input("1. Suma" "\n2. Resta" "\n3. Multiplicación" "\n4. División" "\n:  "))
 
 if (opcion == 1) or (opcion == 2) or (opcion == 3) or (opcion == 4):
 
@@ -191,20 +229,26 @@ if (opcion == 1) or (opcion == 2) or (opcion == 3) or (opcion == 4):
 
     else:
         if numero2 == 0:
-            print("Error division sobre 0")
+            print("Error división sobre 0")
         else:
             resultado = numero1 / numero2
 
     print("Respuesta: ", resultado)
 
 else:
-    print("No existe esa opcion")
+    print("No existe esa opción")
+
+
+
+
+
+
 
 
 # Algoritmo que determina si un numero entero es divisible para otro
 
-numero_uno = int(input("Ingrese primer numero: "))
-numero_dos = int(input("Ingrese segundo numero: "))
+numero_uno = int(input("Ingrese primer número: "))
+numero_dos = int(input("Ingrese segundo número: "))
 
 divisible = numero_uno % numero_dos
 
@@ -212,3 +256,47 @@ if divisible == 0:
     print("Es divisible: ", numero_uno / numero_dos)
 else:
     print("No es divisible")
+
+
+
+
+
+
+
+
+# Realizar un programa que calculé el dígito verificador de la cédula ecuatoriana.
+
+cedula = [1, 7, 1, 9, 0, 8, 8, 3, 6]
+
+cedula[0] = cedula[0] * 2
+if cedula[0] > 9:
+    cedula[0] -= 9
+
+cedula[2] = cedula[2] * 2
+if cedula[2] > 9:
+    cedula[2] -= 9
+
+cedula[4] = cedula[4] * 2
+if cedula[4] > 9:
+    cedula[4] -= 9
+
+cedula[6] = cedula[6] * 2
+if cedula[6] > 9:
+    cedula[6] -= 9
+
+cedula[8] = cedula[8] * 2
+if cedula[8] > 9:
+    cedula[8] -= 9
+
+suma_pares = cedula[1]+cedula[3]+cedula[5]+cedula[7]
+
+suma_impares = cedula[0] + cedula[2] + cedula[4] + cedula[6] + cedula[8]
+
+suma_total = suma_pares + suma_impares
+
+suma_total %= 10
+if suma_total != 0:
+    suma_total = 10 - suma_total
+    print(f"Dígito verificador es: {suma_total}")
+else:
+    print(f"Dígito verificandor es : {suma_total}")
