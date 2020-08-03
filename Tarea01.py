@@ -5,8 +5,10 @@ print("Convertir de grados a radianes.")
 
 grados = int(input("Ingrese valor de grados a convertir: "))
 rad = grados * math.pi / 180
-print("Grados", grados, " a ", rad, " rad")
+print(f"Grados {grados} a {rad} rad")
 
+"""print("Grados", grados, " a ", rad, " rad")
+   print(grados * 3.1416 / 180, "rad")"""
 
 
 
@@ -18,19 +20,20 @@ print("Grados", grados, " a ", rad, " rad")
     circunferencia de la pista, el resultado el programa devuelve el tiempo que tarda el
     atleta en dar dos vueltas a la pista, sabiendo que el atleta descansa 1min cada 1000m. """
 
-print("\n Cálculo de tiempo que tarda un atlta en dar dos vueltas a la pista.")
+print("\n Cálculo de tiempo que tarda un atelta en dar dos vueltas a la pista.")
 
 velocidad = float(input("Introduce velocidad en m/s: "))
 radio = float(input("Introduce radio de pista: "))
 
 velocidad_angular = velocidad/radio  # velocidad angular para fórmula periodo de mcu.
 tiempo = (2 * math.pi / velocidad_angular) * 2
-longitud = 2 * math.pi * radio
+longitud = (2 * math.pi * radio) / 1000
 
-if longitud > 2000:
-    tiempo += 120
+if longitud > 1:  # Descanso n veces mayores a 1000
+    n = longitud/1000  # Longitud con respecto a 1000 metros
+    tiempo *= n  # tiempo multiplicado por la razon respecto a longitud
 
-print(f"Tiempo : {tiempo}")
+print(f"Tiempo : {round(tiempo, 2)} ")
 
 
 
@@ -49,12 +52,12 @@ print("\n Cálculo impuesto a la renta con relación de dependencia de un emplea
 sueldo = float(input("Introduce sueldo mensual de funcionario  "))
 gastos = float(input("Introduce total de gastos de Salud, vivienda, alimentación, educación y vestimenta  "))
 
-if gastos <= sueldo*0.4:
+if gastos <= sueldo*0.5:  # La deducción total por gastos personales no podrá superar el 50% del total de los ingresos
 
-    sueldo *= 12  # 12 años
-    aporte_iess = sueldo * 9.45
-    aporte_iess = (round(aporte_iess, 2))  # limito a dos decimales
-    sueldo = aporte_iess - sueldo - gastos
+    sueldo *= 12  # 12 meses
+    aporte_iess = sueldo * 0.0945  # Aporte iess personal 9,45 %
+    aporte_iess = (round(aporte_iess, 2))  # Redondeo y limito a dos decimales
+    sueldo = sueldo - aporte_iess - gastos  # Resto fraccion basica
     sueldo = (round(sueldo, 2))
 
     if sueldo <= 11315.00:
@@ -133,24 +136,22 @@ minutos = int(input("Ingrese minutos: "))
 segundos = int(input("Ingrese segundos: "))
 dias = 0
 if segundos > 60:
-    minutos = minutos + (segundos // 60)
-    segundos = segundos % 60
-    print(segundos, " seg")
+    minutos = minutos + segundos // 60
+    segundos %= 60
+
 else:
     print(segundos, " seg")
 
 if minutos > 60:
-    horas = horas + (minutos // 60)
-    minutos = minutos % 60
-    print(minutos, " min")
+    horas = horas + minutos // 60
+    minutos %= 60
+
 else:
     print(minutos, " min")
 
-print(horas, " h")
 
 if horas > 24:
     dias = horas // 24
-    print(dias, " dias")
 
 print(f"{dias} dias {horas} horas {minutos} min {segundos} segundos")
 
@@ -165,9 +166,9 @@ print(f"{dias} dias {horas} horas {minutos} min {segundos} segundos")
 
 print("\nFactura con descuento del 10% si su monto es mayor a $100.")
 
-producto1 = int(input("Valor producto 1: "))
-producto2 = int(input("Valor producto 2: "))
-producto3 = int(input("Valor producto 3: "))
+producto1 = float(input("Valor producto 1: "))
+producto2 = float(input("Valor producto 2: "))
+producto3 = float(input("Valor producto 3: "))
 
 subtotal = producto1 + producto2 + producto3
 if subtotal > 100:
@@ -175,8 +176,9 @@ if subtotal > 100:
     subtotal -= descuento
 
 iva = subtotal * 0.12
+iva = round(iva, 2)  # redondeo y limito a 2 decimales
 total_pago = subtotal + iva
-
+total_pago = round(total_pago, 2)
 print(f"IVA: {iva} Total a pagar: {total_pago}")
 
 
@@ -188,17 +190,17 @@ print(f"IVA: {iva} Total a pagar: {total_pago}")
 
 # Si el promedio es mayor a 7 el alumno esta aprobaado caso contario estara reprobado
 
-print("\nSi el promedio es mayor a 7 el alumno esta aprobaado caso contario estara reprobado.")
+print("\nPromedio")
 
 nota1 = float(input("Ingrese primera nota: "))
 nota2 = float(input("Ingrese la segunda nota: "))
 
-suma_notas = (nota1 + nota2) / 2
+promedio = (nota1 + nota2) / 2
 
-if suma_notas >= 7:
-     print("Materia aprobada")
+if promedio >= 7:
+     print(f"Materia aprobada {promedio}")
 else:
-     print("Materia Reprobada")
+     print(f"Materia Reprobada {promedio}")
 
 
 
@@ -220,20 +222,22 @@ if (opcion == 1) or (opcion == 2) or (opcion == 3) or (opcion == 4):
 
     if opcion == 1:
         resultado = numero1 + numero2
+        print("Respuesta: ", resultado)
 
     elif opcion == 2:
         resultado = numero1 - numero2
+        print("Respuesta: ", resultado)
 
     elif opcion == 3:
         resultado = numero1 * numero2
+        print("Respuesta: ", resultado)
 
     else:
         if numero2 == 0:
             print("Error división sobre 0")
         else:
             resultado = numero1 / numero2
-
-    print("Respuesta: ", resultado)
+            print("Respuesta: ", resultado)
 
 else:
     print("No existe esa opción")
@@ -245,7 +249,7 @@ else:
 
 
 
-# Algoritmo que determina si un numero entero es divisible para otro
+print("\nAlgoritmo que determina si un numero entero es divisible para otro")
 
 numero_uno = int(input("Ingrese primer número: "))
 numero_dos = int(input("Ingrese segundo número: "))
@@ -264,9 +268,9 @@ else:
 
 
 
-# Realizar un programa que calculé el dígito verificador de la cédula ecuatoriana.
+print("\nRealizar un programa que calculé el dígito verificador de la cédula ecuatoriana.")
 
-cedula = [1, 7, 1, 4, 6, 3, 3, 3, 4]
+cedula = [1, 7, 1, 6, 0, 8, 5, 5, 8]
 
 cedula[0] = cedula[0] * 2
 if cedula[0] > 9:
