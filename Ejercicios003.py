@@ -54,10 +54,10 @@ digitos_impares = cedula[0:9:2]"""
 
 # Factorial
 numero = int(input("Ingrese valor para calcular su factorial: "))
-total = 1
-for i in range(1, numero+1):
-     total *= i
-print(total)
+factorial = 1
+for i in range(2, numero+1):
+     factorial *= i
+print(factorial)
 
 
 
@@ -95,8 +95,7 @@ else:
 cedula = []
 for i in range(0, 9):
     digito_in = int(input(f"Ingrese {i+1} digito de cedula: "))
-    posicion = i
-    cedula.insert(posicion, digito_in)  # Inserto en la posicion i, el valor de entrada a lista
+    cedula.insert(i, digito_in)  # Inserto en la posición: i y el valor de entrada a lista
 print(cedula)
 
 suma_impares = 0
@@ -144,5 +143,13 @@ total_pago = subtotal + iva
 total_pago = round(total_pago, 2)
 
 print(f"IVA: {iva} Total a pagar: {total_pago}")
+
+
+#Cuantos digitos tiene un numero ingresado
+
+num = int(input("Ingrese "))
+cadena = str(num)  # Convierto un numero entero a cadena string.
+longitud = len(cadena)  # Longitud de cadena. Cuantos digitos tiene numero que ingreso.
+print(longitud)
 
 

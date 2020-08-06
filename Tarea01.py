@@ -91,7 +91,7 @@ if gastos <= sueldo*0.5:  # La deducción total por gastos personales no podrá 
     print(f"Impuesto a la renta: {impuesto}")
 
 else:
-    print("Los gastos sobrepasan el porcentaje de sueldo")
+    print("Los gastos superan a sus ingresos.")
 
 
 
