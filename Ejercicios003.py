@@ -71,7 +71,7 @@ sumaImpar = 0
 producto = 0
 i = 1
 while i < 10:
-     digitos = int(input("Introduce dígito: "))
+     digitos = int(input(f"Introduce dígito {i}: "))
      if i % 2 == 0:
           sumaPar += digitos
      else:
