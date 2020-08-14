@@ -2,9 +2,9 @@ print("Dada una medida de tiempo expresada en horas, minutos y segundos con valo
       "\nElabore un programa que transforme dicha medida en una expresión correcta. "
       "\nCon while")
 
-horas = int(input("Introduce horas:"))
-min = int(input(" Introduce minutos"))
-segundos = int(input("Introduce segundos"))
+horas = int(input("Introduce horas: "))
+min = int(input(" Introduce minutos: "))
+segundos = int(input("Introduce segundos: "))
 
 cont = 0
 cont2 = 0
@@ -126,7 +126,7 @@ while i != 0:
      total_productos = int(input("Ingrese total de productos: "))
      j = 1
      while j <= total_productos:
-         producto = int(input("Valor producto : "))
+         producto = float(input("Valor producto : "))
          subtotal += producto
          j += 1
      fin_while = int(input(" digite 0 para terminar proceso:"))
@@ -151,5 +151,88 @@ num = int(input("Ingrese "))
 cadena = str(num)  # Convierto un numero entero a cadena string.
 longitud = len(cadena)  # Longitud de cadena. Cuantos digitos tiene numero que ingreso.
 print(longitud)
+
+
+
+j = 5
+x = 0
+while j >= 1:
+    for i in range(1, j+1):
+        x += 1
+        print(x, "x")
+        j //= 2
+        print(j, "j")
+
+
+print("\n")
+i = 6
+x = 0
+while i >= 1:
+    x += 1
+    print(x, "x")
+    i //=2
+    print(i, "i")
+
+
+
+print("\n")
+#Listas con estructuras condicionales y bucles
+cubos = [i**3 for i in range(5)]
+print(f"Numeros al cubo desde 0 a 5 {cubos}")
+
+pares = [i**2 for i in range(10) if i**2 % 2 == 0]
+print(f"Numeros pares desde 0 hasta 10, divisibles para 2 = {pares}")
+
+#Lista multiples de 3 desde 0 hasta 20
+
+multiplos_3 = [i for i in range(20) if i % 3 == 0]
+print(f"Multiplos de 3 = {multiplos_3}")
+
+# Lista de valores pares
+par = [2*i for i in range(3*4)]
+print(par)
+
+#Lista de valores elevados al cubo
+cubos = [3*i for i in range(5*5)]
+print(cubos)
+
+#Funcion format. Cambia valores que estan entre llaves {} de una cadena con los asignados de una lista
+nums = [4, 5, 6]
+msg = "Numbers : {0} {1} {2}". format(nums[0], nums[1], nums[2])
+print(msg)
+
+# Funcion join. Pone el caracter deseado en medio de los elementos de lista
+print(",1". join(["spam", "huevos", "jamón"]))
+
+
+
+
+"""print("\n")
+t = [0, 9, 0, 0, 0, 1]
+p = t[1]
+print(p)"""
+
+
+"""n = float(input("I "))
+k = n // 1
+print(k)"""
+
+
+# Primo o compuesto
+num_p= int(input("Ingrese valor: "))
+cont = 0
+for j in range(2, num_p+1):
+     if num_p % j == 0:
+          cont += 1
+          print(j)
+if cont == 2:
+     print("Es primo")
+else:
+     print("Es compuesto")
+
+
+
+
+
 
 

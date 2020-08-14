@@ -25,15 +25,15 @@ print(f"pi/2 = {sumatoria} \nAproximación de pi = {sumatoria * 2}")
 
 
 
-# Encontrar el promedio de todos los números primos que hay entre 1 y n, donde n es el límite del rango.
+# Valor aproximado de pi, basado en el producto de Wallis
 
 print("\nValor aproximado de pi, basado en el producto de Wallis")
 
-limite = int(input("Introduzca límite: "))
+limite_pi = int(input("Introduzca límite: "))
 
 pi = 1
 n = 1
-while n <= limite:
+while n <= limite_pi:
     formula = ((2 * n) / (2 * n - 1)) * ((2 * n) / (2 * n + 1))
     pi *= formula
     n += 1
@@ -143,9 +143,9 @@ else:
 
 print("\nMedida de tiempo.")
 
-horas = int(input("Introduce horas:"))
-min = int(input(" Introduce minutos"))
-segundos = int(input("Introduce segundos"))
+horas = int(input("Introduce horas: "))
+min = int(input(" Introduce minutos: "))
+segundos = int(input("Introduce segundos: "))
 
 cont = 0
 cont2 = 0
