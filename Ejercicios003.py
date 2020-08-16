@@ -233,6 +233,12 @@ else:
 
 
 
+num_uno = []
+for i in range(len(vector_uno)-1, -1, -1):
+    num_uno.append(vector_uno[i])
 
+num_dos = []
+for j in range(len(vector_dos)-1, -1, -1):
+    num_dos.append(vector_dos[j])
 
 

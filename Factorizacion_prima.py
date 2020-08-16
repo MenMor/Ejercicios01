@@ -1,6 +1,7 @@
 """El teorema fundamental de la Aritmética establece que cada número natural mayor que 1 puede ser
    escrito como un producto de números primos ,y eso hasta el rearreglo de los factores,
    este producto es único . Esto es llamada la factorización prima del número"""
+
 numero = int(input("Ingrese valor: "))
 cont = 0
 lista_primos = []
@@ -13,6 +14,7 @@ if cont == 2:
 else:
      print(f"{numero} Es compuesto")
 
+#Toma extremos de sus primos para descomponer
 primo_min = lista_primos[1]
 primo_max = lista_primos[-2]
 producto_primos = primo_max * primo_min
