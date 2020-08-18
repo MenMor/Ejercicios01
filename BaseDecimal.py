@@ -15,10 +15,10 @@ while bucle == 4:
         bucle = 6  # bucle termina
 print(lista_numeros)
 
-sumatoria = 1  # Al estar elevado a potencia 0 siempre dara 1 primero posicion
-exponente = 1
-for i in range(1, len(lista_numeros)):
-    producto = lista_numeros[i] * (base ** exponente)
+sumatoria = 0
+exponente = 0
+for i in range(0, len(lista_numeros)):
+    producto = lista_numeros[i] * (base ** exponente)  # cuando el exponente sea 0 siempre valdra 1. Regla exponete.
     exponente += 1
     sumatoria += producto
 
