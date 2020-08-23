@@ -20,8 +20,23 @@ while j == 2:
     if numero_dos == 0:
         j = 7
 
-for i in range(0, len(vector_uno)):
-    for j in range(0, len(vector_dos)):
-        suma += vector_uno
+"""entero = decimal // 1
+dec = decimal - entero
+print(entero)
+print(dec)"""
+
+
+
+"""# Convertir lista de cadena a entero
+for j in range(0, len(cad_decimal)):
+    parte_entera = (list(map(int, parte_entera)))
+    parte_decimal = (list(map(int, parte_decimal)))
+print(parte_entera)
+print(parte_decimal)
+
+# invierto lista entero
+invertida_entero = []
+for i in range(len(parte_entera)-1, -1, -1):
+    invertida_entero.append(parte_entera[i])"""
 
 

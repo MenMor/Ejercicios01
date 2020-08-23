@@ -11,3 +11,4 @@ suma_pi = 0
 pi = np.arange(0, 1000)
 suma_pi += np.sum(((-1)**pi) / (2*pi+1))
 print(f"pi = {suma_pi*4}")
+

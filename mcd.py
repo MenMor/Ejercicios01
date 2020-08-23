@@ -5,6 +5,8 @@ num_dos = int(input("Ingrese segundo valor: "))
 list_1 = []
 list_2 = []
 list_3 = []  # Llevara valores que al ser comparados de listas anteriores sean iguales
+
+# Guardo en una lista los valores primos de cada número:
 cont = 0
 for j in range(1, num_uno+1):
      if num_uno % j == 0:
@@ -25,6 +27,7 @@ if cont == 2:
 else:
      print(f"\n{num_dos} Es compuesto")
 print(f"Divisores de {num_dos} = {list_2}")
+
 mcm = 0
 if len(list_1) > len(list_2):  # Si lista 1 es mayor entonces
      for i in range(0, len(list_1)):  # Recorrera todas las posiciones de lista 1
@@ -40,5 +43,5 @@ else:
                if list_1[k] == list_2[l]:
                     list_3.append(list_1[k])
                     mcm = (num_uno * num_dos) / max(list_3)
-     print(f"\nDivisores comúnes de {num_uno} y {num_dos} = {list_3} \nmcd({num_uno},{num_dos})= {max(list_3)}"
+     print(f"\nDivisores comúnes de {num_uno} y {num_dos} = {list_3} \nmcd ({num_uno},{num_dos})= {max(list_3)}"
            f"\nmcm({num_uno},{num_dos})= {mcm}")
